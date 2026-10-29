@@ -1,0 +1,40 @@
+{{- $root := . -}}
+{{- range $app := list
+  (dict "name" "frontend" "image" "frontend" "port" 80)
+  (dict "name" "product-service" "image" "product" "port" 8081)
+  (dict "name" "order-service" "image" "order" "port" 8082)
+  (dict "name" "inventory-service" "image" "inventory" "port" 8083)
+}}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ $app.name }}
+spec:
+  replicas: {{ $root.Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ $app.name }}
+  template:
+    metadata:
+      labels:
+        app: {{ $app.name }}
+    spec:
+      containers:
+        - name: {{ $app.name }}
+          image: {{ index $root.Values.images $app.image | quote }}
+          imagePullPolicy: {{ $root.Values.imagePullPolicy }}
+          ports:
+            - containerPort: {{ $app.port }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ $app.name }}
+spec:
+  selector:
+    app: {{ $app.name }}
+  ports:
+    - port: {{ $app.port }}
+      targetPort: {{ $app.port }}
+{{- end }}

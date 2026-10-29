@@ -1,0 +1,12 @@
+replicaCount: 1
+imagePullPolicy: Always
+
+images:
+  frontend: ghcr.io/getGlitch/mini-gitops-store-frontend:latest
+  product: ghcr.io/getGlitch/mini-gitops-store-product-service:latest
+  order: ghcr.io/getGlitch/mini-gitops-store-order-service:latest
+  inventory: ghcr.io/getGlitch/mini-gitops-store-inventory-service:latest
+
+ingress:
+  enabled: true
+  className: traefik
