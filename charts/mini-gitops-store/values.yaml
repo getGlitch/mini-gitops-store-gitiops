@@ -1,13 +1,13 @@
 replicaCount: 1
 imagePullPolicy: Always
 
-releaseTag: "f104cb2d0be4f47eaf7f2c12ceb311ee4ddda29e"
+releaseTag: "18d802d0d9392e0d793402bc5a25cb0addcfcaf3"
 
 images:
-  frontend: ghcr.io/getglitch/mini-gitops-store-frontend:f104cb2d0be4f47eaf7f2c12ceb311ee4ddda29e
-  product: ghcr.io/getglitch/mini-gitops-store-product-service:f104cb2d0be4f47eaf7f2c12ceb311ee4ddda29e
-  order: ghcr.io/getglitch/mini-gitops-store-order-service:f104cb2d0be4f47eaf7f2c12ceb311ee4ddda29e
-  inventory: ghcr.io/getglitch/mini-gitops-store-inventory-service:f104cb2d0be4f47eaf7f2c12ceb311ee4ddda29e
+  frontend: ghcr.io/getglitch/mini-gitops-store-frontend:18d802d0d9392e0d793402bc5a25cb0addcfcaf3
+  product: ghcr.io/getglitch/mini-gitops-store-product-service:18d802d0d9392e0d793402bc5a25cb0addcfcaf3
+  order: ghcr.io/getglitch/mini-gitops-store-order-service:18d802d0d9392e0d793402bc5a25cb0addcfcaf3
+  inventory: ghcr.io/getglitch/mini-gitops-store-inventory-service:18d802d0d9392e0d793402bc5a25cb0addcfcaf3
 
 ingress:
   enabled: true
