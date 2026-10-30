@@ -10,6 +10,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ $app.name }}
+  annotations:
+    kubernetes.io/change-cause: "Release {{ .Values.releaseTag }}"
 spec:
   replicas: {{ $root.Values.replicaCount }}
   selector:

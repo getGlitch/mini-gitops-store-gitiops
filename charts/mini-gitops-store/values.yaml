@@ -1,6 +1,8 @@
 replicaCount: 1
 imagePullPolicy: Always
 
+releaseTag: "2305f26e866ab7a29a4f2cf607b5518618e8fe23"
+
 images:
   frontend: ghcr.io/getglitch/mini-gitops-store-frontend:521ea7c3743f9b8d8ac335a0a6f53d2a51fcd5e9
   product: ghcr.io/getglitch/mini-gitops-store-product-service:521ea7c3743f9b8d8ac335a0a6f53d2a51fcd5e9
