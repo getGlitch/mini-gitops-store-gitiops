@@ -11,7 +11,7 @@ kind: Deployment
 metadata:
   name: {{ $app.name }}
   annotations:
-    kubernetes.io/change-cause: "Release {{ .Values.releaseTag }}"
+    kubernetes.io/change-cause: "Release {{ $root.Values.releaseTag }}"
 spec:
   replicas: {{ $root.Values.replicaCount }}
   selector:
